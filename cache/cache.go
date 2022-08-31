@@ -59,7 +59,7 @@ func (nc *NamesCache) Update() {
 			parsedIp := net.ParseIP(ip)
 
 			if parsedIp != nil {
-				nc.lru.Add(ip, name)
+				nc.lru.Add(parsedIp.String(), name)
 			} else {
 				log.Warn().Str("IP", ip).Msg("IP invalid?")
 			}
