@@ -2,17 +2,18 @@ package server
 
 import (
 	"fmt"
-	"github.com/0xERR0R/fritzbox-rdns/cache"
+
+	"github.com/0xERR0R/fritzbox-rdns/lookup"
 	"github.com/miekg/dns"
 	"github.com/rs/zerolog/log"
 )
 
 type Server struct {
-	dnsServers []*dns.Server
-	cache      *cache.NamesCache
+	dnsServers  []*dns.Server
+	namesLookup *lookup.NamesLookupService
 }
 
-func NewServer(cache *cache.NamesCache) (*Server, error) {
+func NewServer(namesLookup *lookup.NamesLookupService) (*Server, error) {
 	const address = ":53"
 	dnsServers := []*dns.Server{
 		createUDPServer(address),
@@ -20,8 +21,8 @@ func NewServer(cache *cache.NamesCache) (*Server, error) {
 	}
 
 	s := &Server{
-		dnsServers: dnsServers,
-		cache:      cache,
+		dnsServers:  dnsServers,
+		namesLookup: namesLookup,
 	}
 
 	for _, server := range s.dnsServers {
@@ -41,7 +42,7 @@ func (s *Server) OnRequest(rw dns.ResponseWriter, msg *dns.Msg) {
 
 		ip := ExtractAddressFromReverse(name)
 
-		clientName := s.cache.Get(ip)
+		clientName := s.namesLookup.Get(ip)
 		response.SetRcode(msg, dns.RcodeSuccess)
 		response.MsgHdr.RecursionAvailable = msg.MsgHdr.RecursionDesired
 		if clientName != "" {
