@@ -27,6 +27,7 @@ type NamesLookupService struct {
 func NewNamesLookupService(service *fritzbox.Service, rdb *redis.Client) *NamesLookupService {
 	n := &NamesLookupService{
 		service: service,
+		rdb:     rdb,
 	}
 
 	go n.periodicUpdate()
