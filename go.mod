@@ -6,7 +6,7 @@ require (
 	github.com/go-redis/redis/v9 v9.0.0-rc.2
 	github.com/miekg/dns v1.1.50
 	github.com/rs/zerolog v1.29.0
-	github.com/sethvargo/go-envconfig v0.8.3
+	github.com/sethvargo/go-envconfig v0.9.0
 	golang.org/x/text v0.6.0
 )
 
