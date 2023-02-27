@@ -7,7 +7,7 @@ require (
 	github.com/miekg/dns v1.1.51
 	github.com/rs/zerolog v1.29.0
 	github.com/sethvargo/go-envconfig v0.9.0
-	golang.org/x/text v0.6.0
+	golang.org/x/text v0.7.0
 )
 
 require (
