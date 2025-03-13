@@ -4,10 +4,10 @@ go 1.19
 
 require (
 	github.com/go-redis/redis/v9 v9.0.0-rc.2
-	github.com/miekg/dns v1.1.61
+	github.com/miekg/dns v1.1.63
 	github.com/rs/zerolog v1.33.0
 	github.com/sethvargo/go-envconfig v1.0.3
-	golang.org/x/text v0.16.0
+	golang.org/x/text v0.20.0
 )
 
 require (
@@ -16,8 +16,8 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
 	golang.org/x/mod v0.18.0 // indirect
-	golang.org/x/net v0.26.0 // indirect
-	golang.org/x/sync v0.7.0 // indirect
-	golang.org/x/sys v0.21.0 // indirect
+	golang.org/x/net v0.31.0 // indirect
+	golang.org/x/sync v0.9.0 // indirect
+	golang.org/x/sys v0.27.0 // indirect
 	golang.org/x/tools v0.22.0 // indirect
 )
