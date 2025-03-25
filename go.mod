@@ -6,7 +6,7 @@ toolchain go1.24.1
 require (
 	github.com/go-redis/redis/v9 v9.0.0-rc.2
 	github.com/miekg/dns v1.1.64
-	github.com/rs/zerolog v1.33.0
+	github.com/rs/zerolog v1.34.0
 	github.com/sethvargo/go-envconfig v1.1.1
 	golang.org/x/text v0.23.0
 )
